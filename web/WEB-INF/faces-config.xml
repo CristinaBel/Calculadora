@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<root>
+    <application>
+        <locale-config>
+            <default-locale>en</default-locale>
+            <supported-locale>es</supported-locale>
+        </locale-config>
+        <message-bundle>resources.mensajes</message-bundle>
+    </application>
+</root>
+

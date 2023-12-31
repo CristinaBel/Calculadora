@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <f:loadBundle basename="resources.mensajes" var="msg"/>
+        <title>Mini Calculadora</title>
+    </h:head>
+    <h:body>
+        <h1>#{msg['app.title']}</h1>
+        <h:form id ="form">
+            <h:panelGrid columns="2">
+                <h:outputLabel value="${msg.valor1}"  for="valor1"/>
+                <h:inputText value="#{calculadoraBean.v1}" id="v1"/>
+                <h:outputLabel value="${msg.valor2}"  for="valor2"/>
+                <h:inputText value="#{calculadoraBean.v2}" id="v2"/>
+                <h:commandButton value="${msg.sumar}"  action="#{calculadoraBean.sumar}" id="sumar"/>
+                <h:commandButton value="${msg.restar}"  action="#{calculadoraBean.restar}" id="restar"/>
+                <h:commandButton value="${msg.multiplicar}"  action="#{calculadoraBean.multiplicar}" id="multiplicar"/>
+                <h:commandButton value="${msg.dividir}" action="#{calculadoraBean.dividir}" id="dividir"/>
+                <h:outputLabel value="${msg.resultado}" />
+                <h:outputText value="#{calculadoraBean.v3}" id="v3"/>                      
+            </h:panelGrid>
+        </h:form>
+        <h:form id ="idioma">
+            <h:commandButton id="ingles" value="${msg.idioma_ingles}" action="#{calculadoraBean.cambiar('en')}"/>
+            <h:commandButton id="castellano" value="${msg.idioma_castellano}" action="#{calculadoraBean.cambiar('es')}"/>
+        </h:form>
+    </h:body>
+</html>
